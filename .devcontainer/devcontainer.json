@@ -1,0 +1,33 @@
+{
+  "name": "Pump.fun Sniper Bot",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11"
+    }
+  },
+  
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ]
+    }
+  },
+  
+  "postCreateCommand": "pip install -r requirements.txt",
+  
+  "postStartCommand": "nohup python main.py > bot.log 2>&1 &",
+  
+  "remoteEnv": {
+    "AUTOSTART": "true"
+  },
+  
+  "forwardPorts": [],
+  
+  "portsAttributes": {},
+  
+  "remoteUser": "vscode"
+}
